@@ -31,10 +31,12 @@ then
 elif [ $1 = "--version" ]
 then
 	printf "$VERSION \n"
+	exit 0
 
 elif [ $1 = "--license" ]
 then
 	printf "$LICENSE \n"
+	exit 0
 else
 	echo " No argument given. Try \"brightness --help\" for help."
 	exit 1
