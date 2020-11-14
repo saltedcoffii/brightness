@@ -8,6 +8,7 @@ brightness supports, or intends to support, all Linux distributions regardless o
 1. Git clone this repo: `git clone https://github.com/saltedcoffii/brightness` in a terminal.
 2. Install the cloned script into your PATH: `sudo install ./brightness/brightness /usr/local/bin/brightness`. I recommend /usr/local/bin, but anywhere in your path will work. If the folder is under the user's home, `sudo` can be omitted.
 3. Delete the cloned repo: `rm -rfv ./brightness`
+
 Alternatively, if you're using Ubuntu, Debian, Fedora, CentOS or similar, download a deb or rpm file from the [releases](https://github.com/saltedcoffii/brightness/) page and install with your preferred package manager.
 
 ### Usage
