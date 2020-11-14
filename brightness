@@ -1,0 +1,41 @@
+#!/bin/bash
+VERSION="0.1"
+HELP="Usage: brightness [OPTION]
+	Options:
+		up		bring the brightness up one step. does nothing if brightness is at maximum
+		down		bring the brightness down one step. does nothing if the brightness is at minimum
+		--help		print this help and exit
+		--license	print license information and exit
+		--version	print version and exit"
+LICENSE="Brightness is an extremely simple GNOME dbus daemon wrapper that allows changing screen brightness from the CLI and binding keyboard shortcuts to brightness.
+    Copyright (C) 2020  saltedcoffii
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License or the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License or the GNU Affero General Public License for more details."
+
+if [ $1 = "up" ]
+then
+	gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepUp
+	exit 0
+
+elif [ $1 = "down" ]
+then
+	gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepDown
+	exit 0
+elif [ $1 = "--help" ]
+then
+	printf "$HELP \n"
+	exit 0
+elif [ $1 = "--version" ]
+then
+	printf "$VERSION \n"
+
+elif [ $1 = "--license" ]
+then
+	printf "$LICENSE \n"
+else
+	echo " No argument given. Try \"brightness --help\" for help."
+	exit 1
+fi
