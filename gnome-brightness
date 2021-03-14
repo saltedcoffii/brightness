@@ -1,5 +1,5 @@
-#!/bin/bash
-VERSION="0.1"
+#!/usr/bin/env bash
+VERSION="0.2"
 HELP="Usage: brightness [OPTION]
 	Options:
 		up		bring the brightness up one step. does nothing if brightness is at maximum
@@ -15,26 +15,21 @@ it under the terms of the GNU General Public License or the GNU Affero General P
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License or the GNU Affero General Public License for more details."
 
-if [ $1 = "up" ]
-then
+if [[ $1 == "up" ]]; then
 	gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepUp
 	exit 0
 
-elif [ $1 = "down" ]
-then
+elif [[ $1 == "down" ]]; then
 	gdbus call --session --dest org.gnome.SettingsDaemon.Power --object-path /org/gnome/SettingsDaemon/Power --method org.gnome.SettingsDaemon.Power.Screen.StepDown
 	exit 0
-elif [ $1 = "--help" ]
-then
+elif [[ $1 == "--help" ]]; then
 	printf "$HELP \n"
 	exit 0
-elif [ $1 = "--version" ]
-then
-	printf "$VERSION \n"
+elif [[ $1 == "--version" ]]; then
+	printf "gnome-brightness $VERSION \n"
 	exit 0
 
-elif [ $1 = "--license" ]
-then
+elif [[ $1 == "--license" ]]; then
 	printf "$LICENSE \n"
 	exit 0
 else
