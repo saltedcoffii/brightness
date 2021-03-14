@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 VERSION="0.2"
-HELP="Usage: brightness [OPTION]
+HELP="Usage: ${0} [OPTION]
 	Options:
 		up		bring the brightness up one step. does nothing if brightness is at maximum
 		down		bring the brightness down one step. does nothing if the brightness is at minimum
@@ -33,6 +33,6 @@ elif [[ $1 == "--license" ]]; then
 	printf "$LICENSE \n"
 	exit 0
 else
-	echo " No argument given. Try \"brightness --help\" for help."
+	echo " No argument given. Try \"${0} --help\" for help."
 	exit 1
 fi
