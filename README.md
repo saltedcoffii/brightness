@@ -12,7 +12,7 @@ brightness supports, or intends to support, all Linux distributions regardless o
 Alternatively, if you're using Ubuntu, Debian, Fedora, CentOS or similar, download a deb or rpm file from the [releases](https://github.com/saltedcoffii/brightness/) page and install with your preferred package manager.
 
 ### Usage
-To call this program from the CLI while GNOME is running, simply run `brightness up` or `brightness down`.
+To call this program from the CLI while GNOME is running, simply run `gnome-brightness up` or `gnome-brightness down`.
 
 To set a keyboard shortcut, open GNOME's settings, find "Keyboard Shortcuts" on the left hand side, scroll all the way down to the bottom, and click the plus button under "Custom Shortcuts". Add two new shortcuts. One with the name "Brightness up" and command "brightness up", bound to whatever shortcut you like, and the other named "Brightness down" and command "brightness down", bound to whatever shortcut you like.
 
